@@ -27,6 +27,12 @@ function Card({ children }) {
     />
   ]
 }
+// + 이렇게 해도 됨
+function Card(props) {
+  return (
+    <div className="card" {...props}/>
+  );
+}
 
 //부모 컴포넌트
 export default function Profile() {

@@ -53,6 +53,4 @@ export default RootLayout;
 - Default import 구문: `import [컴포넌트명] from '[경로]'` / Named import 구문: `import {[컴포넌트명]} from '[경로]'`
 - Default import에서 컴포넌트명은 실제 컴포넌트 이름이 아니어도 같은 default export 값을 가져옴(그래도 컴포넌트 이름을 유의미하게 짓는게 중요) / 반대로 Named import는 양쪽 파일에서 사용하려는 이름이 같아야 하기 때문에 named import라고 불림
 
-![export비교](image.png)
-
 > 일반적으로 한 파일에서 하나의 컴포넌트만 export 할 때 default export 방식을 사용하고, 여러 컴포넌트를 export 할 경우엔 named export 방식을 사용
