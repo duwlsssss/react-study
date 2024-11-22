@@ -66,7 +66,7 @@ export default function Counter() {
 
 ##### 절차적으로 살펴보자면, 다음과 같다.
 
- ![](image1.png)
+ ![](./images-chajaesik/image1.png)
 
 
  
@@ -104,7 +104,7 @@ export default function Counter() {
 
  
 
-![](image2.png)
+![](./images-chajaesik/image2.png)
  
 
 ### 따라서, React는 42를 최종 결과로 저장하고, useState에서 반환한다.

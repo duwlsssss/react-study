@@ -1,7 +1,7 @@
 ## React앱은 서로 중첩된 컴포넌트들로 구성되어 있는데, 이것을 어떻게 추적할까?
 
  
-![](image1.png)
+![](./images-chajaesik/image1.png)
 
 
 ### 트리는 요소와 UI 사이의 관계 모델이다.
@@ -37,7 +37,7 @@ export default function App() {
 }
 ```
 
-![](image2.png)
+![](./images-chajaesik/image2.png)
 
 #### 위의 렌더 트리를 구성한다.
 
@@ -72,12 +72,12 @@ export default function App() {
  ```
 
 #### 이를 렌더 트리로 나타내면 다음과 같다.
-![](image3.png)
+![](./images-chajaesik/image3.png)
  
 ### 모듈 의존성 트리
 #### 의존성 트리는 앱을 배포하기 위해 필요한 코드를 번들로 묶는 데 빌드 도구에서 사용된다.
 #### 의존성 트리는 느리게 페인트되는 큰 번들 크기를 디버깅하는 데 유용하며, #### 어떤 코드를 번들로 묶을지 최적화할 기회를 제공한다.
-![](image4.png)
+![](./images-chajaesik/image4.png)
  
 
 ##### 컴포넌트를 분리하고 로직을 별도의 파일로 분리하면 컴포넌트, 함수 또는 상수를 내보내는(export) JS 모듈을 만들 수 있다.

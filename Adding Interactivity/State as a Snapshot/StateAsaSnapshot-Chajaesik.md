@@ -56,7 +56,7 @@ function sendMessage(message) {
 
 #### 이해하기 쉽게 그림으로 살펴보자 !
 
-![](image1.png)
+![](./images-chajaesik/image1.png)
 
 ##### 컴포넌트의 state는 메모리로써 함수가 반환된 후 사라지는 일반 변수와 다르다.
 
@@ -64,7 +64,7 @@ function sendMessage(message) {
 
 ##### 컴포넌트는 해당 렌더링의 state 값을 사용해 계산된 새로운 props 세트와 이벤트 핸들러가 포함된 UI의 스냅샷을 JSX에 반환한다.
 
-  ![](image2.png)
+  ![](./images-chajaesik/image2.png)
 
 ### 다음은 이것이 어떻게 동작하는지 확인해보고자 한다.
 
@@ -92,7 +92,7 @@ export default function Counter() {
 
 ##### 하지만 !?
 
- ![](image3.png)
+ ![](./images-chajaesik/image3.png)
  
 
 ##### 이럴수가 ! 
@@ -155,7 +155,7 @@ export default function Counter() {
 ##### 방금 설명한 내용에 근거하여, 결과값은 0이 출력될 것이라 예상할 수 있다.
 
  
- ![](image4.png)
+ ![](./images-chajaesik/image4.png)
 
  
 
@@ -172,7 +172,7 @@ export default function Counter() {
         }, 3000);
       }}>+5</button>
 ```
- ![](image5.png)
+ ![](./images-chajaesik/image5.png)
 
 ##### React에 저장된 state는 경고창이 실행될 때 변경되었을 수 있지만 사용자가 버튼을 클릭한 시점에 state 스냅샷을 사용하는 것은 이미 예약된 것이다.
 

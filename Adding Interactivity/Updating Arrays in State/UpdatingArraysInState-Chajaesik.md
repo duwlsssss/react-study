@@ -6,7 +6,7 @@
 
 #### 따라서 `arr[0] = 'bird'`처럼 배열 내부의 항목을 재할당해서는 안 되며, push()나 pop 같은 함수로 배열을 변경해선 안된다.
 
- ![](image1.png)
+ ![](./images-chajaesik/image1.png)
 
 
 #### 오른쪽에 있는 filter나 map 같은 state의 원본 배열을 변경시키지 않는 함수를 사용하여 원본 배열로부터 
