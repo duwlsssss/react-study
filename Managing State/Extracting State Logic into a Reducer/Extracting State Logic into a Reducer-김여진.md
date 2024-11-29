@@ -94,6 +94,9 @@ function tasksReducer(tasks, action) {
 
 ⚠️ reducer 사용시 주의점
 
+- **각 action은 하나의 상호작용을 설명해야함**
+e.g. 사용자가 reducer가 관리하는 3개의 필드가 있는 양식에서 '재설정'을 누르면 3개의 개별 set_filed가 아닌 하나의 reset_form action을 전송해야함
+
 - **reducer는 순수함수니까 컴포넌트 외부에 영향을 미치는 작업을 수행해선 안됨 / 객체,배열의 불변성을 유지해야함**
 객체, 배열을 다루는 경우 Immer 라이브러리에서 제공하는 `useImmerReducer`를 사용해 간결하게 코드 작성도 가능
 ```jsx
@@ -122,16 +125,15 @@ function tasksReducer(draft, action) {
     }
   }
 }
+
 export default function TaskApp() {
   const [tasks, dispatch] = useImmerReducer(
     tasksReducer,
     initialTasks
   );
   ...
+}
 ```
-- **각 action은 하나의 상호작용을 설명해야함**
-e.g. 사용자가 reducer가 관리하는 3개의 필드가 있는 양식에서 '재설정'을 누르면 3개의 개별 set_filed가 아닌 하나의 reset_form action을 전송해야함
-
 
 3. 컴포넌트에서 reducer 사용하기
 
@@ -143,6 +145,23 @@ state를 담을 수 있는 값과 dispatch함수를 리턴함
 ```jsx
 import { useReducer } from 'react';
 const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+
+function handleAddTask(text) {
+  dispatch({
+    type: 'added',
+    id: nextId++,
+    text: text,
+  });
+}
+
+function handleChangeTask(task) {
+  dispatch({
+    type: 'changed',
+    task: task
+  });
+}
+
+...
 ```
 
 ### useState vs useReducer 
@@ -150,7 +169,7 @@ const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 ||useState|useReducer|
 |----|------------|------------|
 |코드 크기|미리 작성하는 코드는 적음|reducer함수, action을 전달하는 부분을 다 작성해야한다는 단점 but **`여러 이벤트 핸들러에서 비슷한 방식으로 state를 업데이트할 땐`** 코드 양 줄여줌|
-|가독성|간단한 state 업데이트에선 가독성 좋음|**`복잡한 구조의 state를 다룰 땐`** reducer함수호 업데이트 로직, 이벤트핸들러로 무엇이 발생했는지 명확히 구분 가능|
+|가독성|간단한 state 업데이트에선 가독성 좋음|**`복잡한 구조의 state를 다룰 땐`** reducer함수로 업데이트 로직, 이벤트핸들러로 무엇이 발생했는지 명확히 구분 가능|
 |디버깅|디버깅 어려움|콘솔 로그를 각 단계에 추가해 state가 업데이트 중 어느 부분에서 버그가 발생했는지 확인 용이|
 
 동일한 방식이기 때문에
