@@ -97,10 +97,33 @@ export default function Page() {
 - context 사용 전 고려할 것
   - props를 쓰는게 데이터 흐름을 분명하게 할 수도 있음 
   - jsx를 children으로 전달해서 props를 불필요하게 전달하기만 하는 컴포넌트 줄일 수 있음
+
   ```jsx
+  function Layout({ posts }) {
+    return (
+      <div className="layout">
+        <header>Header</header>
+        <Posts posts={posts} />
+        <footer>Footer</footer>
+      </div>
+    );
+  }
+
   <Layout posts={posts} />
+
   //대신
-  //Layout이 children prop을 받아 
+  //Layout이 children prop을 받는 형식으로 수정
+
+  function Layout({ children }) {
+    return (
+      <div className="layout">
+        <header>Header</header>
+        <main>{children}</main>
+        <footer>Footer</footer>
+      </div>
+    );
+  } 
+
   <Layout>
     <Posts posts={posts}>
   </Layout>
