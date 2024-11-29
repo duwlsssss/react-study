@@ -4,7 +4,6 @@ useReducer는 복잡한 state 업데이트 로직을 관리하기 좋은 방법�
 
 특히, state를 업데이트하는 로직이 여러 이벤트 핸들러로 분산된 경우 reducer 함수를 사용하면 코드의 가독성과 유지보수성이 높아집니다.
 
-//TODO: 이해 필요
 ### Reducer 함수란?
 
 - state와 action을 받아서 다음 state를 반환하는 함수.
